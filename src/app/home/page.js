@@ -14,8 +14,9 @@ export default function Home() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
-            Hi, I'm <span className="text-blue-600 font-extrabold dark:text-blue-400 bg-clip-text">Muhammad Owais Ishaq </span>
+            Hi, I&apos;m <span className="text-blue-600 font-extrabold dark:text-blue-400 bg-clip-text">Muhammad Owais Ishaq</span>
           </h1>
+
 
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300">
             <span className="inline-block">
