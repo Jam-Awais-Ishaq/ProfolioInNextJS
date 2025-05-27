@@ -64,7 +64,7 @@ export default function Contact() {
                                         href="mailto:contact@example.com"
                                         className="text-base text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                                     >
-                                        contact@example.com
+                                        owaisishaq59@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -77,9 +77,15 @@ export default function Contact() {
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
                                     <a
                                         href="tel:+1234567890"
-                                        className="text-base text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                        className="text-base flex flex-col text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                                     >
-                                        +1 (234) 567-890
+                                        <span>
+                                            permanent NO : +92-310 8727759
+                                        </span>
+                                        <span>
+                                            Temp NO : +92-310 8727759
+                                        </span>
+
                                     </a>
                                 </div>
                             </div>
@@ -91,7 +97,7 @@ export default function Contact() {
                                 <div>
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
                                     <p className="text-base text-gray-800 dark:text-white">
-                                        San Francisco, CA
+                                        Bahawalpur,Punjab,Pakistan
                                     </p>
                                 </div>
                             </div>
@@ -103,15 +109,13 @@ export default function Contact() {
                                 Connect With Me
                             </h4>
                             <div className="flex gap-4">
-                                <a href="#" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <a href="https://github.com/Awais-Ishaq-Ai" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <FiGithub className="text-xl" />
                                 </a>
-                                <a href="#" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <a href="https://www.linkedin.com/in/muhammad-owais-ishaq-57a67a340/" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <FiLinkedin className="text-xl" />
                                 </a>
-                                <a href="#" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                    <FiTwitter className="text-xl" />
-                                </a>
+                                
                             </div>
                         </div>
                     </div>

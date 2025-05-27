@@ -68,13 +68,13 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                         </button>
 
                         {/* Download CV Button */}
-                        <Link
-                            href="/path-to-your-cv.pdf"
+                        <a
+                            href="/OwaisUpdatedReume.pdf"
                             download
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
                         >
                             Download CV
-                        </Link>
+                        </a>
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -108,7 +108,9 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                             className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${darkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-blue-400' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'}`}>
                             {item.name}
                         </Link>))}
-                    <Link href="/path-to-your-cv.pdf" download onClick={() => setIsOpen(false)} className={`block px-4 py-3 mt-4 rounded-md text-center font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}> Download CV </Link>
+
+                    <a href="/OwaisUpdatedReume.pdf"
+                        download onClick={() => setIsOpen(false)} className={`block px-4 py-3 mt-4 rounded-md text-center font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}> Download CV </a>
                 </div>
             </div>
         </header>

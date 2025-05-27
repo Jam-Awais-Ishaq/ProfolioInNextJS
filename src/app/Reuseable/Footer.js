@@ -13,7 +13,6 @@ const Footer = () => {
             <h2 className="text-2xl font-bold">Muhammad Owais Ishaq</h2>
             <p className="text-gray-400 mt-2">Building digital experiences</p>
           </div>
-          
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
             <div className="mb-4 sm:mb-0">
               <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
