@@ -49,10 +49,10 @@ export default function Home() {
           {/* Social Links */}
           <div className="flex justify-center lg:justify-start space-x-5 pt-6">
             {[
-              { icon: <FiGithub size={24} />, url: "https://github.com/yourusername" },
-              { icon: <FiLinkedin size={24} />, url: "https://linkedin.com/in/yourusername" },
-              { icon: <FiTwitter size={24} />, url: "https://twitter.com/yourusername" },
-              { icon: <FiMail size={24} />, url: "mailto:youremail@example.com" }
+              { icon: <FiGithub size={24} />, url: "https://github.com/Awais-Ishaq-Ai" },
+              { icon: <FiLinkedin size={24} />, url: "https://www.linkedin.com/in/muhammad-owais-ishaq-57a67a340/" },
+              { icon: <FiTwitter size={24} />, url: "https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09" },
+              { icon: <FiMail size={24} />, url: "mailto:owaisishaq59@gmail.com" }
             ].map((item, index) => (
               <a
                 key={index}
