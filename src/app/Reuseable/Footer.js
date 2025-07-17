@@ -44,7 +44,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-3">Connect</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/Awais-Ishaq-Ai" 
+                  href="https://github.com/Jam-Awais-Ishaq" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
@@ -53,7 +53,7 @@ const Footer = () => {
                   <FaGithub size={24} />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/muhammad-owais-ishaq-57a67a340/"
+                  href="https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
@@ -71,7 +71,7 @@ const Footer = () => {
                   <FaTwitter size={24} />
                 </a>
                 <a 
-                  href="mailto:owaisishaq59@gmail.com" 
+                  href="mailto:muhammadowaisishaqofficials@gmail.com" 
                   className="text-gray-400 hover:text-white transition"
                   aria-label="Email"
                 >
@@ -90,5 +90,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

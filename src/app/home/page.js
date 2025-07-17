@@ -20,7 +20,7 @@ export default function Home() {
 
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300">
             <span className="inline-block">
-              Frontend Developer
+              Frontend Developer (MERN)
               <span className="inline-block w-2 h-2 ml-2 bg-blue-500 rounded-full animate-pulse"></span>
             </span>
           </h2>
@@ -49,10 +49,10 @@ export default function Home() {
           {/* Social Links */}
           <div className="flex justify-center lg:justify-start space-x-5 pt-6">
             {[
-              { icon: <FiGithub size={24} />, url: "https://github.com/Awais-Ishaq-Ai" },
-              { icon: <FiLinkedin size={24} />, url: "https://www.linkedin.com/in/muhammad-owais-ishaq-57a67a340/" },
+              { icon: <FiGithub size={24} />, url: "https://github.com/Jam-Awais-Ishaq" },
+              { icon: <FiLinkedin size={24} />, url: "https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/" },
               { icon: <FiTwitter size={24} />, url: "https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09" },
-              { icon: <FiMail size={24} />, url: "mailto:owaisishaq59@gmail.com" }
+              { icon: <FiMail size={24} />, url: "mailto:muhammadowaisishaqofficials@gmail.com" }
             ].map((item, index) => (
               <a
                 key={index}

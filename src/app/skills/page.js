@@ -18,7 +18,8 @@ const Skills = () => {
         { name: 'JavaScript', icon: <SiJavascript className="text-yellow-500" size={24} />, level: 85 },
         { name: 'React.js', icon: <FaReact className="text-blue-400" size={24} />, level: 80 },
         { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white" size={24} />, level: 75 },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" size={24} />, level: 85 },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" size={24} />, level: 80 },
+        { name: 'Bootstrap', icon: <SiTailwindcss className="text-cyan-400" size={24} />, level: 75 },
       ]
     },
     {
@@ -26,19 +27,15 @@ const Skills = () => {
       items: [
         { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" size={24} />, level: 60 },
         { name: 'Express', icon: <FaServer className="text-gray-600" size={24} />, level: 55 },
-        { name: 'MogoDb', icon: <FaDatabase className="text-green-500" size={24} />, level: 45 },
-        // { name: 'Firebase', icon: <PiDatabaseFill className="text-orange-800" size={24} />, level: 40 },
+        { name: 'MogoDb/MogoDbAtlas', icon: <FaDatabase className="text-green-500" size={24} />, level: 45 },
       ]
     },
     {
       category: 'Other',
       items: [
-        // { name: 'Python', icon: <SiPython className="text-green-900" size={24} />, level: 75 },
-        { name: 'C#', icon: <PiFileCSharpBold className="text-blue-800" size={24} />, level: 75 },
-        { name: '.Net FrameWork', icon: <PiFileCSharpBold className="text-blue-800" size={24} />, level: 75 },
         { name: 'Git', icon: <SiGit className="text-orange-500" size={24} />, level: 80 },
+        { name: 'GitHub', icon: <SiGit className="text-orange-500" size={24} />, level: 80 },
         { name: 'Responsive Design', icon: <FaMobileAlt className="text-purple-500" size={24} />, level: 85 },
-        // { name: 'UI/UX Design', icon: <SiFigma className="text-pink-500" size={24} />, level: 70 },
       ]
     }
   ];

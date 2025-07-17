@@ -62,9 +62,8 @@ export default function Contact() {
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
                                     <a
                                         href="mailto:contact@example.com"
-                                        className="text-base text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                                    >
-                                        owaisishaq59@gmail.com
+                                        className="text-base text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        muhammadowaisishaqofficials@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -109,10 +108,10 @@ export default function Contact() {
                                 Connect With Me
                             </h4>
                             <div className="flex gap-4">
-                                <a href="https://github.com/Awais-Ishaq-Ai" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <a href="https://github.com/Jam-Awais-Ishaq" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <FiGithub className="text-xl" />
                                 </a>
-                                <a href="https://www.linkedin.com/in/muhammad-owais-ishaq-57a67a340/" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <a href="https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <FiLinkedin className="text-xl" />
                                 </a>
                                 
