@@ -69,7 +69,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
 
                         {/* Download CV Button */}
                         <a
-                            href="/OwaisUpdatedReume.pdf"
+                            href="/MuhammadOwais.pdf"
                             download
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
                         >
@@ -99,8 +99,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 </div>
             </div>
             {/* Mobile Menu */}
-            <div
-                id="mobile-menu"
+            <div id="mobile-menu"
                 className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'} ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
                 <div className="px-4 pt-2 pb-8 space-y-4">
                     {navItems.map((item) => (
@@ -109,7 +108,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                             {item.name}
                         </Link>))}
 
-                    <a href="/OwaisUpdatedReume.pdf"
+                    <a href="/MuhammadOwais.pdf"
                         download onClick={() => setIsOpen(false)} className={`block px-4 py-3 mt-4 rounded-md text-center font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}> Download CV </a>
                 </div>
             </div>
