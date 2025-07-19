@@ -189,16 +189,16 @@ export default function Contact() {
                                 ></textarea>
                             </div>
 
-                            {/* <button type="submit" className="border flex justify-center cursor-pointer border-red-500 w-[100%] items-center px-5 py-2.5 text-2xl font-medium rounded-lg text-white bg-indigo-600">
+                            <button type="submit" className="border flex justify-center cursor-pointer border-red-500 w-[100%] items-center px-5 py-2.5 text-2xl font-medium rounded-lg text-white bg-indigo-600">
                                 <FiSend className="mr-4 text-md" />
                                 Send Message
-                            </button> */}
+                            </button>
 
-                            <div className='w-[100%] flex justify-center items-center '>
+                            {/* <div className='w-[100%] flex justify-center items-center '>
                                 <button className="w-[100%] border border-white rounded-md  text-white">
                                     send message
                                 </button>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>
