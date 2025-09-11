@@ -20,7 +20,7 @@ const About = () => {
           <div className="lg:w-1/3 flex justify-center">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg">
               <Image
-                src="/blue.jpg" // Replace with your image path
+                src="/awais.png" // Replace with your image path
                 alt="Profile Picture"
                 layout="fill"
                 objectFit="cover"
