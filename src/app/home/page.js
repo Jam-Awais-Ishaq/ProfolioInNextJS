@@ -73,7 +73,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 group-hover:opacity-0 transition-opacity duration-500 z-0"></div>
 
             {/* Using Next.js Image component for optimized loading */}
-            <Image src="/blue.jpg" alt="Muhammad Awais" width={500} height={500} className="w-full h-full object-cover border-0 transform group-hover:scale-105 transition-transform duration-500" priority />
+            <Image src="/awais.png" alt="Muhammad Awais" width={500} height={500} className="w-full h-full object-cover border-0 transform group-hover:scale-105 transition-transform duration-500" priority />
           </div>
 
           {/* Decorative elements */}
