@@ -9,11 +9,11 @@ const About = () => {
   return (
     <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12">  
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             About Me
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>  
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-12">

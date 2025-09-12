@@ -70,11 +70,11 @@ export default function Home() {
         <div className="relative flex justify-center mt-10 lg:mt-0">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800 group">
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent z-10"></div>
-            <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 group-hover:opacity-0 transition-opacity duration-500 z-0"></div>
+            <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 group-hover:opacity-0 transition-opacity duration-500 z-0"></div>    
 
             {/* Using Next.js Image component for optimized loading */}
             <Image src="/awais.png" alt="Muhammad Awais" width={500} height={500} className="w-full h-full object-cover border-0 transform group-hover:scale-105 transition-transform duration-500" priority />
-          </div>
+          </div>   
 
           {/* Decorative elements */}
           <div className="absolute -bottom-6 -right-6 bg-blue-600 dark:bg-blue-500 w-32 h-32 rounded-2xl -z-10 animate-float"></div>
@@ -82,10 +82,10 @@ export default function Home() {
 
           {/* Tech stack floating badges */}
           <div className="absolute -left-0 top-1/4 bg-white dark:bg-gray-800 shadow-md px-3 py-2 rounded-lg flex items-center gap-2 -rotate-12">
-            <span className="text-xs font-bold text-blue-600 dark:text-blue-400">React</span>
+            <span className="text-xs font-bold text-blue-600 dark:text-blue-400">React.js</span>    
           </div>
           <div className="absolute -right-1 bottom-1/4 bg-white dark:bg-gray-800 shadow-md px-3 py-2 rounded-lg flex items-center gap-2 rotate-12">
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Next.js</span>
+            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Next.Js</span>
           </div>
         </div>
       </div>
