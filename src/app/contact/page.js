@@ -62,7 +62,7 @@ export default function Contact() {
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
                                     <a
                                         href="mailto:contact@example.com"
-                                        className="text-base md:text-md sm:text-[5px] text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                        className="text-base sm:text-[5px] text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                                     >   
                                         muhammadowaisishaqofficials@gmail.com
                                     </a>
