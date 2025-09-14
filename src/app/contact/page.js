@@ -54,7 +54,7 @@ export default function Contact() {
                         </h3>
 
                         <div className="space-y-4">
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start md:gap-4 ">
                                 <div className="bg-indigo-100 dark:bg-indigo-900/20 p-2 rounded-lg">
                                     <FiMail className="text-indigo-600 dark:text-indigo-400 text-xl" />
                                 </div>
@@ -62,9 +62,11 @@ export default function Contact() {
                                     <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
                                     <a
                                         href="mailto:contact@example.com"
-                                        className="text-base text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                        className="text-base md:text-md sm:text-[5px] text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                    >
                                         muhammadowaisishaqofficials@gmail.com
                                     </a>
+
                                 </div>
                             </div>
 
@@ -114,7 +116,7 @@ export default function Contact() {
                                 <a href="https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/" className="text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                                     <FiLinkedin className="text-xl" />
                                 </a>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -196,7 +198,7 @@ export default function Contact() {
 
                             <div className='w-[100%] flex justify-center items-center '>
                                 <button className="w-[100%] border border-white rounded-md  text-white">
-                                    send message    
+                                    send message
                                 </button>
                             </div>
                         </form>
