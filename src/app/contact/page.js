@@ -81,7 +81,7 @@ export default function Contact() {
                                         className="text-base flex flex-col text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                                     >
                                         <span>
-                                            permanent NO : +92-310 8727759
+                                            permanent NO : +92-303-6191910
                                         </span>
                                         <span>
                                             Temp NO : +92-310 8727759
