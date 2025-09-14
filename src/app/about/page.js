@@ -34,7 +34,7 @@ const About = () => {
               Front-End Developer (MERN)
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              I’m Muhammad Owais Ishaq, a MERN Stack Developer with 1.5+ years of experience in building responsive and scalable web applications. I specialize in React.js, Node.js, Express, and MongoDB. I’ve worked on e-commerce platforms, admin dashboards, and blockchain-integrated apps. I recently completed my Software Engineering degree from Islamia University of Bahawalpur and am passionate about solving real-world problems through technology.
+              I’m Muhammad Owais Ishaq, a MERN Stack Developer with 1.5+ years of experience in building responsive and scalable web applications. I specialize in React.js, Node.js, Express, and MongoDB. I’ve worked on e-commerce platforms, admin dashboards, and blockchain-integrated apps. I recently completed my Software Engineering degree from Islamia University of Bahawalpur and am passionate about solving real-world problems through technology.  
             </p>
 
             <div className="mb-8">

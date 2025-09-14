@@ -85,7 +85,7 @@ export default function Home() {
             <span className="text-xs font-bold text-blue-600 dark:text-blue-400">React.js</span>    
           </div>
           <div className="absolute -right-1 bottom-1/4 bg-white dark:bg-gray-800 shadow-md px-3 py-2 rounded-lg flex items-center gap-2 rotate-12">
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Next.Js</span>
+            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Next.js</span>
           </div>
         </div>
       </div>
