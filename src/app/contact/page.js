@@ -84,7 +84,7 @@ export default function Contact() {
                                             permanent NO : +92-303-6191910
                                         </span>
                                         <span>
-                                            Temp NO : +92-310 8727759
+                                            Temp NO : +92-310-8727759
                                         </span>
 
                                     </a>
