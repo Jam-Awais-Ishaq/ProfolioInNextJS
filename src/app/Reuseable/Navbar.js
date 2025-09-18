@@ -107,7 +107,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                             {item.name}
                         </Link>))}
 
-                    <a href="/MuhammadOwais1.pdf"
+                    <a href="/MuhammadAwaisIshaq.pdf"
                         download onClick={() => setIsOpen(false)} className={`block px-4 py-3 mt-4 rounded-md text-center font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}> Download CV </a>
                 </div>
             </div>
