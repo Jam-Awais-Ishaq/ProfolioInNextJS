@@ -68,7 +68,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                         </button>
 
                         {/* Download CV Button */}
-                        <a href="/MuhammadOwais1.pdf"
+                        <a href="/MuhammadAwaisIshaq.pdf"
                             download
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
                         >
