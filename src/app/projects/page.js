@@ -10,17 +10,44 @@ const Projects = () => {
 
   const projects = [
     {
-      id: 1,
-      title: "TheEagles.io BlockChain project use MetaMask & trutWallet extension in chrome to visit Dashboard",
-      description: "A blockchain web application. Users can connect their crypto wallets such as MetaMask and Trust Wallet to securely access and interact with the dashboard. Wallet integration ensures a seamless Web3 experience and allows users to authenticate without traditional login systems.",
-      technologies: ["Tailwindcss","React.js","Contract Address"],
-      category: "Full Stack",
-      image: "/theegeals.jpg",
-      link: "https://theeagleio.netlify.app/",
-      github: "https://github.com/Jam-Awais-Ishaq/TheEagles",
-    },
+  id: 1,
+  title: "Elevate Bright Tech CRM – Enterprise Workforce Management System",
+  description: "Elevate Bright Tech is a multi-role enterprise CRM system designed to manage company operations across Admin, HR, Team Lead, and Employee panels. It includes real-time task tracking, productivity monitoring, attendance system, shift management, and internal communication tools. The system ensures transparency in workflow and provides complete visibility of employee performance through automated tracking features.",
+  technologies: [
+    "React.js",
+    "Electron.js",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Vite",
+    "CSS3"
+  ],
+  category: "Full Stack",
+  image: "/crm.png",
+  link: "https://elevatebrighttech.netlify.app/",
+  github: "https://github.com/Jam-Awais-Ishaq/crm-frontend"
+},
+{
+  id: 2,
+  title: "GHM – Local Deals & Community Marketplace (Australia)",
+  description: "GHM is a location-based community and deals discovery platform designed for users in Australia. The application allows users to explore nearby affordable food options, hot deals, and promotions using an interactive map system. It also includes a community-driven social feed where users can post updates, share recommendations, and interact with others in a Facebook-like experience. The platform combines geolocation services with social networking and deal discovery to enhance local engagement and user experience.",
+ 
+  technologies: [
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Map Integration (Google Maps / Mapbox)",
+    "CSS3",
+    "Vite"
+  ],
+  category: "Full Stack",
+  image: "/ghm.png",
+  link: "https://ghm-resteurants.netlify.app/",
+  github: "https://github.com/Jam-Awais-Ishaq/GHM"
+},
     {
-      id: 2,
+      id: 3,
       title: "E-commerce Website with Ai Feshion Designer (Final Year project)",
       description: "A full-stack e-commerce platform with React, Node.js, and MongoDB. (we are working on its backend)",
       technologies: ["React", "Node.js", "MongoDB"],
@@ -30,7 +57,7 @@ const Projects = () => {
       github: "https://github.com/Jam-Awais-Ishaq/wearhub-Final-Year-Project",
     },
      {
-      id: 3,
+      id: 4,
       title: "SchoolFinder Web Application",
       description: "SchoolFinder is a web application that helps users locate nearby schools through an interactive map. It uses the Leaflet.js API to display school locations based on the user’s current or selected area.",
       technologies: ["Tailwindcss","React.js"],
@@ -40,7 +67,7 @@ const Projects = () => {
       github: "https://github.com/Jam-Awais-Ishaq/SchoolFinder",
     },
     {
-      id: 4,
+      id: 5,
       title: "Admin Penal For E-commerce Website",
       description: "An admin panel for WearHub e-commerce, managing products, orders, users, and analytics with Next.js, Firebase, and Tailwind CSS.",
       technologies: ["React.js", "Tailwind CSS"],
@@ -50,7 +77,7 @@ const Projects = () => {
       github: "https://github.com/Jam-Awais-Ishaq/adminDashboard_AJ_Styles_Frontend",
     },
     {
-      id: 5,
+      id: 6,
       title: "HumTek Solutions",
       description: "A Company website built in html, css, bootstrap & javaScript",
       technologies: ["Html ", "css", "bootstrap","JS"],
@@ -60,7 +87,7 @@ const Projects = () => {
       github: "https://github.com/Jam-Awais-Ishaq/HumTek-Solutions",
     },
     {
-      id: 5,
+      id: 7,
       title: "Deta-Code-Sloutions  {Deployed on versal}",
       description: "Landing page of a software company website currently under development. Built using Tailwindcss and React.js, it showcases the company's services with a clean and responsive design.",
       technologies: ["Html ", "css", "bootstrap","JS"],
@@ -68,6 +95,16 @@ const Projects = () => {
       image: "/DeltaCode.jpg",
       link: "https://deta-code-sloutions.vercel.app/",
       github: "https://github.com/Jam-Awais-Ishaq/Deta-Code-Sloutions",
+    },
+     {
+      id: 8,
+      title: "TheEagles.io BlockChain project use MetaMask & trutWallet extension in chrome to visit Dashboard",
+      description: "A blockchain web application. Users can connect their crypto wallets such as MetaMask and Trust Wallet to securely access and interact with the dashboard. Wallet integration ensures a seamless Web3 experience and allows users to authenticate without traditional login systems.",
+      technologies: ["Tailwindcss","React.js","Contract Address"],
+      category: "Full Stack",
+      image: "/theegeals.jpg",
+      link: "https://theeagleio.netlify.app/",
+      github: "https://github.com/Jam-Awais-Ishaq/TheEagles",
     },
   ];
 
