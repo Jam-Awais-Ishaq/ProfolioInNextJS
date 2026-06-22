@@ -65,14 +65,14 @@ const About = () => {
                     Muhammad Owais Ishaq
                   </h2>
                   <p className="mt-1 text-sm font-semibold text-[var(--accent-text)]">
-                    Front-End Developer (MERN)
+                    Jr MERN stack Developer (PERN)
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-sm font-semibold text-[var(--text-soft)]">
                 <FiMapPin className="text-[var(--accent-text)]" />
-                Bahawalpur, Punjab, Pakistan
+                 Punjab, Pakistan
               </div>
 
               <div className="mt-6 grid gap-3">
@@ -93,7 +93,7 @@ const About = () => {
                   <FiArrowRight />
                 </a>
                 <a
-                  href="/MuhammadOwais1.pdf"
+                  href="/Muhammad-Owais-Ishaq.pdf"
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--accent)] px-5 py-3 font-bold text-[var(--accent-text)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
                 >
@@ -114,7 +114,7 @@ const About = () => {
                 I create modern web apps that are clean, responsive, and easy to use.
               </h3>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">
-                I am a MERN Stack Developer with 1.5+ years of experience building scalable web applications. My work combines React.js, Node.js, Express, MongoDB, and practical UI thinking to deliver dashboards, CRM tools, e-commerce systems, and interactive web platforms.
+                I am a Jr MERN Stack Developer with 1.5+ years of experience building scalable web applications. My work combines React.js, Node.js, Express, MongoDB, and practical UI thinking to deliver dashboards, CRM tools, e-commerce systems, and interactive web platforms.
               </p>
             </div>
 

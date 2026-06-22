@@ -1,7 +1,23 @@
 // components/Skills.js
 "use client";
 import { FaCode, FaReact, FaMobileAlt, FaServer } from 'react-icons/fa';
-import { SiNextdotjs, SiJavascript, SiTailwindcss, SiTypescript, SiNodedotjs, SiGit, SiFigma } from 'react-icons/si';
+import {
+  SiElectron,
+  SiGit,
+  SiHeroku,
+  SiJavascript,
+  SiNetlify,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiRailway,
+  SiRender,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypeorm,
+  SiVercel,
+} from 'react-icons/si';
 import { FaDatabase } from "react-icons/fa";
 import { PiDatabaseFill } from "react-icons/pi";
 import { SiPython } from "react-icons/si";
@@ -30,6 +46,21 @@ const Skills = () => {
         { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" size={24} />, level: 60 },
         { name: 'Express', icon: <FaServer className="text-gray-600" size={24} />, level: 55 },
         { name: 'MongoDb/Atlas', icon: <FaDatabase className="text-green-500" size={24} />, level: 45 },
+        { name: 'PostgreSQL', icon: <SiPostgresql className="text-sky-600" size={24} />, level: 60 },
+        { name: 'Supabase', icon: <SiSupabase className="text-emerald-500" size={24} />, level: 60 },
+        { name: 'Prisma', icon: <SiPrisma className="text-slate-700 dark:text-slate-200" size={24} />, level: 55 },
+        
+      ]
+    },
+    {
+      category: 'Deployment',
+      summary: 'Hosting, deployment, and production release platforms.',
+      items: [
+        { name: 'Vercel', icon: <SiVercel className="text-black dark:text-white" size={24} />, level: 65 },
+        { name: 'Netlify', icon: <SiNetlify className="text-teal-500" size={24} />, level: 80 },
+        { name: 'Render', icon: <SiRender className="text-black dark:text-white" size={24} />, level: 75 },
+        { name: 'Railway', icon: <SiRailway className="text-purple-500" size={24} />, level: 60 },
+        { name: 'Heroku', icon: <SiHeroku className="text-violet-600" size={24} />, level: 50 },
       ]
     },
     {
@@ -38,6 +69,7 @@ const Skills = () => {
       items: [
         { name: 'Git', icon: <SiGit className="text-orange-500" size={24} />, level: 80 },
         { name: 'GitHub', icon: <SiGit className="text-orange-500" size={24} />, level: 80 },
+        { name: 'Electron.js', icon: <SiElectron className="text-cyan-400" size={24} />, level: 65 },
         { name: 'Responsive Design', icon: <FaMobileAlt className="text-purple-500" size={24} />, level: 85 },
       ]
     }
