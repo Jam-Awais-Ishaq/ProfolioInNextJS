@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -114,14 +115,15 @@ const Projects = () => {
     activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-600">
+    <section id="projects" className="relative isolate overflow-hidden bg-[var(--page-bg)] pb-16 pt-32 text-[var(--text)] sm:pt-36">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_15%,var(--glow-a),transparent_28%),radial-gradient(circle_at_85%_25%,var(--glow-b),transparent_26%),linear-gradient(135deg,var(--hero-start)_0%,var(--hero-mid)_52%,var(--hero-end)_100%)]" />
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+          className="mb-6 text-center text-3xl font-bold text-[var(--text)]"
         >
           My Projects
         </motion.h2>
@@ -131,7 +133,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+          className="mx-auto mb-12 max-w-2xl text-center text-[var(--muted)]"
         >
           Here are some of my recent projects. Click on any project to learn more about it.
         </motion.p>
@@ -143,8 +145,8 @@ const Projects = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-4 py-2 rounded-full transition-colors duration-300 ${
                 activeFilter === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+                  ? "bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-white shadow-[0_12px_28px_var(--accent-shadow)]"
+                  : "border border-[var(--border)] bg-[var(--surface)] text-[var(--text-soft)] hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
               }`}
             >
               {category}
@@ -152,7 +154,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -160,49 +162,58 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[0_20px_70px_var(--shadow)] ring-1 ring-[var(--border)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--surface-soft)] hover:shadow-[0_26px_90px_var(--accent-shadow)]"
             >
-              <div className="relative h-48 w-full">
+              <div className="relative h-56 w-full overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="hover:scale-105 transition-transform duration-300"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--page-bg),transparent_70%)]" />
+                <span className="absolute left-4 top-4 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--accent-text)] backdrop-blur">
+                  {project.category}
+                </span>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-3 text-lg font-bold leading-snug text-[var(--text)] transition-colors group-hover:text-[var(--accent-text)]">
+                  {project.title}
+                </h3>
+                <p className="mb-5 line-clamp-4 text-sm leading-7 text-[var(--muted)]">
+                  {project.description}
+                </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="mb-6 flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
+                      className="rounded-full border border-[var(--border)] bg-[var(--accent-soft)] px-3 py-1 text-xs font-medium text-[var(--accent-text)]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex space-x-4">
+                <div className="mt-auto grid grid-cols-2 gap-3">
                   <Link
                     href={project.link}
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] px-4 py-3 text-sm font-bold text-white shadow-[0_12px_28px_var(--accent-shadow)] transition-transform duration-300 hover:-translate-y-0.5"
                   >
-                    View Details
+                    Live
+                    <FiExternalLink size={16} />
                   </Link>
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-300 flex items-center   text-white"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--accent)] px-4 py-3 text-sm font-bold text-[var(--accent-text)] transition-colors duration-300 hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
                   >    
-                    <svg className="w-5 h-5 mr-2 " fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
+                    <FiGithub size={16} />
                     Code
                   </a>
                 </div>

@@ -1,1 +1,111 @@
 @import "tailwindcss";
+
+:root {
+  --page-bg: #fffaf5;
+  --page-bg-2: #ffffff;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --surface-soft: rgba(255, 247, 237, 0.86);
+  --text: #111111;
+  --text-soft: #2b2b2b;
+  --muted: #5f6368;
+  --border: rgba(17, 17, 17, 0.12);
+  --accent: #f97316;
+  --accent-2: #111111;
+  --accent-soft: rgba(249, 115, 22, 0.12);
+  --accent-text: #c2410c;
+  --glow-a: rgba(249, 115, 22, 0.18);
+  --glow-b: rgba(17, 17, 17, 0.06);
+  --dot-a: rgba(249, 115, 22, 0.75);
+  --dot-b: rgba(17, 17, 17, 0.24);
+  --accent-shadow: rgba(249, 115, 22, 0.28);
+  --shadow: rgba(17, 17, 17, 0.12);
+  --hero-start: #fffaf5;
+  --hero-mid: #ffffff;
+  --hero-end: #fff3e6;
+}
+
+.dark {
+  --page-bg: #030815;
+  --page-bg-2: #071226;
+  --surface: rgba(7, 18, 38, 0.8);
+  --surface-strong: #071226;
+  --surface-soft: rgba(10, 21, 48, 0.8);
+  --text: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.9);
+  --muted: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #1688ff;
+  --accent-2: #a64cff;
+  --accent-soft: rgba(22, 136, 255, 0.12);
+  --accent-text: #78a6ff;
+  --glow-a: rgba(37, 99, 235, 0.16);
+  --glow-b: rgba(147, 51, 234, 0.16);
+  --dot-a: rgba(164, 76, 255, 0.9);
+  --dot-b: rgba(22, 136, 255, 0.85);
+  --accent-shadow: rgba(76, 85, 255, 0.3);
+  --shadow: rgba(0, 0, 0, 0.28);
+  --hero-start: #030815;
+  --hero-mid: #071226;
+  --hero-end: #08071c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+.typing-caret {
+  animation: caret-blink 0.9s steps(1) infinite;
+}
+
+.hero-float {
+  --float-rotate: 6deg;
+  animation: hero-float 5s ease-in-out infinite;
+}
+
+.hero-float-delay {
+  --float-rotate: -6deg;
+  animation: hero-float 5.5s ease-in-out 0.8s infinite;
+}
+
+.hero-dot-grid {
+  background-image: radial-gradient(circle, var(--dot-a) 1.7px, transparent 1.7px);
+  background-size: 18px 18px;
+}
+
+.hero-dot-wave {
+  background-image:
+    radial-gradient(circle at center, var(--dot-b) 1.5px, transparent 1.5px),
+    radial-gradient(circle at center, var(--dot-a) 1.3px, transparent 1.3px);
+  background-position: 0 35px, 9px 58px;
+  background-size: 18px 18px;
+  mask-image: radial-gradient(ellipse at center bottom, black 0%, transparent 68%);
+}
+
+@keyframes caret-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--float-rotate));
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(var(--float-rotate));
+  }
+}

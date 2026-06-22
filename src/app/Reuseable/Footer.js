@@ -1,93 +1,126 @@
-// components/Footer.js
-import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import Link from "next/link";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FiMapPin } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const quickLinks = [
+    { name: "Home", href: "/home" },
+    { name: "Projects", href: "/projects" },
+    { name: "Skills", href: "/skills" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <FaGithub size={20} />,
+      label: "GitHub",
+      href: "https://github.com/Jam-Awais-Ishaq",
+    },
+    {
+      icon: <FaLinkedin size={20} />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/",
+    },
+    {
+      icon: <FaTwitter size={20} />,
+      label: "Twitter",
+      href: "https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09",
+    },
+    {
+      icon: <FaEnvelope size={20} />,
+      label: "Email",
+      href: "mailto:muhammadowaisishaqofficials@gmail.com",
+    },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold">Muhammad Owais Ishaq</h2>
-            <p className="text-gray-400 mt-2">Building digital experiences</p>
+    <footer className="relative bg-[var(--page-bg)] px-4 pt-16 text-[var(--text)] sm:px-6 lg:px-8">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,var(--glow-a),transparent_24%),radial-gradient(circle_at_78%_0%,var(--glow-b),transparent_24%)]" />
+
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 pb-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr]">
+          <div>
+            <Link href="/home" className="inline-flex items-center gap-3">
+              <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-3xl font-black tracking-wide text-transparent">
+                MA
+              </span>
+              <span className="text-xl font-bold text-[var(--text)]">Portfolio</span>
+            </Link>
+
+            <p className="mt-4 max-w-md text-sm leading-7 text-[var(--muted)]">
+              Muhammad Owais Ishaq, Frontend Developer focused on responsive,
+              scalable, and polished web experiences.
+            </p>
+
+            <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[var(--muted)]">
+              <FiMapPin className="text-[var(--accent-text)]" />
+              Punjab, Pakistan
+            </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
-            <div className="mb-4 sm:mb-0">
-              <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="text-gray-400 hover:text-white transition">
-                    Home
+
+          <nav>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[var(--text-soft)]">
+              Links
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-1">
+              {quickLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent-text)]"
+                  >
+                    {item.name}
                   </Link>
                 </li>
-                <li>
-                  <Link href="/projects" className="text-gray-400 hover:text-white transition">
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-gray-400 hover:text-white transition">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-gray-400 hover:text-white transition">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Connect</h3>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://github.com/Jam-Awais-Ishaq" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
-                  aria-label="GitHub"
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[var(--text-soft)]">
+              Contact
+            </h3>
+            <a
+              href="mailto:muhammadowaisishaqofficials@gmail.com"
+              className="block break-words text-sm font-medium text-[var(--muted)] transition-colors hover:text-[var(--accent-text)]"
+            >
+              muhammadowaisishaqofficials@gmail.com
+            </a>
+
+            <div className="mt-5 flex gap-4">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={
+                    item.href.startsWith("mailto:") ? undefined : "_blank"
+                  }
+                  rel={
+                    item.href.startsWith("mailto:")
+                      ? undefined
+                      : "noopener noreferrer"
+                  }
+                  aria-label={item.label}
+                  className="text-[var(--muted)] transition-colors hover:text-[var(--accent-text)]"
                 >
-                  <FaGithub size={24} />
+                  {item.icon}
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin size={24} />
-                </a>
-                <a 
-                  href="https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter size={24} />
-                </a>
-                <a 
-                  href="mailto:muhammadowaisishaqofficials@gmail.com" 
-                  className="text-gray-400 hover:text-white transition"
-                  aria-label="Email"
-                >
-                  <FaEnvelope size={24} />
-                </a>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+
+        <div className="flex flex-col gap-2 border-t border-[var(--border)] py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© {currentYear} Muhammad Owais Ishaq. All rights reserved.</p>
-          <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
+          <p>Built with Next.js and Tailwind CSS</p>
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;

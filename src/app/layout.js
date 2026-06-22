@@ -4,7 +4,7 @@ import Navbar from "./Reuseable/Navbar";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body cz-shortcut-listen="true" className={` antialiased`}>
         <Navbar />
         {children}

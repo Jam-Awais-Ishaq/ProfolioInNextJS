@@ -1,116 +1,158 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
-import Link from 'next/link';
 
-export default function Navbar({ darkMode, toggleDarkMode }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState('home');
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { FiDownload, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 
-    const navItems = [
-        { name: 'Home', href: 'home' },
-        { name: 'Projects', href: 'projects' },
-        { name: 'Skills', href: 'skills' },
-        { name: 'About', href: 'about' },
-        { name: 'Contact', href: 'contact' },
-    ];
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
+  const pathname = usePathname();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = ['home', 'projects', 'skills', 'about', 'contact'];
-            const scrollPosition = window.scrollY + 100;
+  const navItems = [
+    { name: "Home", href: "/home" },
+    { name: "Projects", href: "/projects" },
+    { name: "Skills", href: "/skills" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+  ];
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element && element.offsetTop <= scrollPosition &&
-                    element.offsetTop + element.offsetHeight > scrollPosition) {
-                    setActiveSection(section);
-                    break;
-                }
-            }
-        };
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
 
-        const handleKeyDown = (e) => {
-            if (e.key === 'Escape') {
-                setIsOpen(false);
-            }
-        };
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
+    window.addEventListener("keydown", handleKeyDown);
 
-    return (
-        <header className={`fixed w-full z-50 transition-colors duration-300 ${darkMode ? 'bg-gray-900/90 backdrop-blur-sm' : 'bg-white/90 backdrop-blur-sm'}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 md:h-12">
-                    {/* Logo */}
-                    <Link href="#home" className="flex items-center group">
-                        <span className={`text-xl font-bold transition-colors ${darkMode ? 'text-blue-400 group-hover:text-blue-300' : 'text-blue-600 group-hover:text-blue-500'}`}>MA</span>
-                        <span className={`ml-2 text-xl font-bold transition-colors ${darkMode ? 'text-white group-hover:text-gray-300' : 'text-gray-900 group-hover:text-gray-700'}`}>Portfolio</span>
-                    </Link>
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center text-red- space-x-8">
-                        {navItems.map((item) => (
-                            <Link key={item.name} href={item.href} className={`px-1 py-2 text-sm font-medium transition-colors duration-300 ${darkMode ? activeSection === item.name.toLowerCase() ? 'text-blue-400' : 'text-gray-300 hover:text-blue-400' : activeSection === item.name.toLowerCase() ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>
-                                {item.name}
-                            </Link>
-                        ))}
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
-                        {/* Dark Mode Toggle */}
-                        <button onClick={toggleDarkMode} aria-label="Toggle dark mode" className={`p-2 rounded-full focus:outline-none ${darkMode ? 'text-yellow-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-200'}`}>
-                            {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
-                        </button>
+  const closeMenu = () => setIsOpen(false);
 
-                        {/* Download CV Button */}
-                        <a href="/MuhammadOwaisIshaq2.pdf"
-                            download
-                            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
-                        >
-                            Download CV
-                        </a>
-                    </nav>
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 shadow-[0_20px_80px_var(--shadow)] backdrop-blur-xl sm:px-6">
+        <div className="flex h-16 items-center justify-between gap-4">
+          <Link href="/home" onClick={closeMenu} className="flex items-center gap-3">
+            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-2xl font-black tracking-wide text-transparent">
+              MA
+            </span>
+            <span className="text-xl font-bold text-[var(--text)]">Portfolio</span>
+          </Link>
 
-                    {/* Mobile Menu Button */}
-                    <div className="flex md:hidden items-center space-x-4">
-                        <button
-                            onClick={toggleDarkMode}
-                            aria-label="Toggle dark mode"
-                            className={`p-2 rounded-full focus:outline-none ${darkMode ? 'text-yellow-300' : 'text-gray-700'}`}
-                        >
-                            {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
-                        </button>
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            aria-label="Toggle menu"
-                            aria-expanded={isOpen}
-                            aria-controls="mobile-menu"
-                            className={`p-2 rounded-md focus:outline-none ${darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-200'}`}
-                        >
-                            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                        </button>
-                    </div>
-                </div>
+          <nav className="hidden items-center gap-8 lg:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative px-1 py-5 text-sm font-semibold transition-colors duration-300 ${
+                  pathname === item.href || (pathname === "/" && item.href === "/home")
+                    ? "text-[var(--accent-text)]"
+                    : "text-[var(--text-soft)] hover:text-[var(--text)]"
+                }`}
+              >
+                {item.name}
+                <span
+                  className={`absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] transition-opacity duration-300 ${
+                    pathname === item.href || (pathname === "/" && item.href === "/home") ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-4 lg:flex">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="grid h-11 w-11 place-items-center rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--text)] transition-colors hover:border-[var(--accent)]"
+            >
+              {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
+            </button>
+            <a
+              href="/Muhammad-Owais-Ishaq.pdf"
+              download
+              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_30px_var(--shadow)] transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              <FiDownload size={18} />
+              Download CV
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3 lg:hidden">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="grid h-11 w-11 place-items-center rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--text)] transition-colors hover:border-[var(--accent)]"
+            >
+              {theme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsOpen((value) => !value)}
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="grid h-11 w-11 place-items-center rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] text-[var(--text)]"
+            >
+              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="mobile-menu"
+          className={`grid transition-all duration-300 lg:hidden ${
+            isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="flex flex-col gap-2 border-t border-[var(--border)] pt-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                    pathname === item.href || (pathname === "/" && item.href === "/home")
+                      ? "bg-[var(--accent-soft)] text-[var(--accent-text)]"
+                      : "text-[var(--text-soft)] hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <a
+                href="/Muhammad-Owais-Ishaq.pdf"
+                download
+                onClick={closeMenu}
+                className="mt-2 inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] px-5 py-3 text-sm font-bold text-white"
+              >
+                <FiDownload size={18} />
+                Download CV
+              </a>
             </div>
-            {/* Mobile Menu */}
-            <div id="mobile-menu"
-                className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'} ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
-                <div className="px-4 pt-2 pb-8 space-y-4">
-                    {navItems.map((item) => (
-                        <Link key={item.name} href={item.href} onClick={() => { setIsOpen(false); document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' }); }}
-                            className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${darkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-blue-400' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'}`}>
-                            {item.name}
-                        </Link>))}
-
-                    <a href="/MuhammadOwaisIshaq2.pdf"
-                        download onClick={() => setIsOpen(false)} className={`block px-4 py-3 mt-4 rounded-md text-center font-medium transition-colors ${darkMode ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700'}`}> Download CV </a>
-                </div>
-            </div>
-        </header>
-    );
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 }

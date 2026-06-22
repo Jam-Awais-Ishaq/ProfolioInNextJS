@@ -1,88 +1,150 @@
 "use client";
-import Image from 'next/image';
-import { useState } from 'react';
-import { FaCode, FaReact, FaMobileAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiJavascript, SiTailwindcss } from 'react-icons/si';
-import { SiNodedotjs } from "react-icons/si";
+
+import Image from "next/image";
+import { FaCode, FaMobileAlt, FaReact } from "react-icons/fa";
+import { FiArrowRight, FiBriefcase, FiDownload, FiMapPin, FiUser } from "react-icons/fi";
+import { SiJavascript, SiNextdotjs, SiNodedotjs, SiTailwindcss } from "react-icons/si";
+
 const About = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const skills = [
+    { label: "HTML/CSS", icon: <FaCode /> },
+    { label: "JavaScript", icon: <SiJavascript /> },
+    { label: "React.js", icon: <FaReact /> },
+    { label: "Next.js", icon: <SiNextdotjs /> },
+    { label: "Node.js", icon: <SiNodedotjs /> },
+    { label: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { label: "Responsive UI", icon: <FaMobileAlt /> },
+  ];
+
+  const stats = [
+    { value: "1.5+", label: "Years Experience" },
+    { value: "8+", label: "Completed Projects" },
+    { value: "4+", label: "Production Level Projects" },
+    { value: "MERN", label: "Primary Stack" },
+  ];
+
+  const journey = [
+    {
+      title: "Frontend Engineering",
+      text: "I build responsive interfaces with React, Next.js, Tailwind CSS, and reusable component patterns.",
+    },
+    {
+      title: "Business Applications",
+      text: "I have worked on CRM systems, admin dashboards, e-commerce platforms, and blockchain-integrated apps.",
+    },
+    {
+      title: "Product Mindset",
+      text: "My focus is clean UI, fast workflows, accessible layouts, and practical solutions for real users.",
+    },
+  ];
+
   return (
-    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">  
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-            About me
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>  
-        </div>
+    <section id="about" className="relative isolate overflow-hidden bg-[var(--page-bg)] px-4 py-24 text-[var(--text)] sm:px-6 lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_18%,var(--glow-a),transparent_28%),radial-gradient(circle_at_78%_40%,var(--glow-b),transparent_26%),linear-gradient(135deg,var(--hero-start)_0%,var(--hero-mid)_52%,var(--hero-end)_100%)]" />
 
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/3 flex justify-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg">
-              <Image
-                src="/awais.png" // Replace with your image path
-                alt="Profile Picture"
-                layout="fill"
-                objectFit="cover"
-                className="hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-
-          <div className="lg:w-2/3">
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-              Front-End Developer (MERN)
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              I’m Muhammad Owais Ishaq, a MERN Stack Developer with 1.5+ years of experience in building responsive and scalable web applications. I specialize in React.js, Node.js, Express, and MongoDB. I’ve worked on e-commerce platforms, admin dashboards, and blockchain-integrated apps. I recently completed my Software Engineering degree from Islamia University of Bahawalpur and am passionate about solving real-world problems through technology.  
-            </p>
-
-            <div className="mb-8">
-              <h4 className="text-xl font-medium text-gray-800 dark:text-white mb-4">
-                My Skills
-              </h4>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <FaCode className="text-blue-600" />
-                  <span className="text-gray-700 dark:text-gray-300">HTML/CSS</span>
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+          <aside className="lg:sticky lg:top-28 lg:self-start">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_24px_80px_var(--shadow)] backdrop-blur">
+              <div className="flex items-center gap-5">
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface-soft)]">
+                  <Image
+                    src="/awais.png"
+                    alt="Muhammad Owais Ishaq"
+                    fill
+                    sizes="96px"
+                    className="object-cover object-top"
+                  />
                 </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <SiJavascript className="text-yellow-500" />
-                  <span className="text-gray-700 dark:text-gray-300">JavaScript</span>
-                </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <FaReact className="text-blue-400" />
-                  <span className="text-gray-700 dark:text-gray-300">React.js</span>
-                </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <SiNextdotjs className="text-black dark:text-white" />
-                  <span className="text-gray-700 dark:text-gray-300">Next.js</span>
-                </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <SiNodedotjs className="text-black dark:text-white" />
-                  <span className="text-gray-700 dark:text-gray-300">Node.js</span>
-                </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <SiTailwindcss className="text-blue-400" />
-                  <span className="text-gray-700 dark:text-gray-300">Tailwind CSS</span>
-                </div>
-                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-full">
-                  <FaMobileAlt className="text-purple-600" />
-                  <span className="text-gray-700 dark:text-gray-300">Responsive Design</span>
+                <div>
+                  <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--accent-soft)] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[var(--accent-text)]">
+                    <FiUser />
+                    About
+                  </p>
+                  <h2 className="text-2xl font-black leading-tight text-[var(--text)]">
+                    Muhammad Owais Ishaq
+                  </h2>
+                  <p className="mt-1 text-sm font-semibold text-[var(--accent-text)]">
+                    Front-End Developer (MERN)
+                  </p>
                 </div>
               </div>
+
+              <div className="mt-6 flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-sm font-semibold text-[var(--text-soft)]">
+                <FiMapPin className="text-[var(--accent-text)]" />
+                Bahawalpur, Punjab, Pakistan
+              </div>
+
+              <div className="mt-6 grid gap-3">
+                {stats.map((item) => (
+                  <div key={item.label} className="flex items-center justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3">
+                    <span className="text-sm text-[var(--muted)]">{item.label}</span>
+                    <span className="font-black text-[var(--text)]">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] px-5 py-3 font-bold text-white shadow-[0_12px_28px_var(--accent-shadow)] transition duration-300 hover:-translate-y-0.5"
+                >
+                  Contact Me
+                  <FiArrowRight />
+                </a>
+                <a
+                  href="/MuhammadOwais1.pdf"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--accent)] px-5 py-3 font-bold text-[var(--accent-text)] transition-colors hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
+                >
+                  <FiDownload />
+                  Download CV
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          <div>
+            <div className="mb-10">
+              <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm font-bold text-[var(--accent-text)]">
+                <FiBriefcase />
+                Professional Summary
+              </p>
+              <h3 className="max-w-3xl text-2xl font-black leading-tight text-[var(--text)] sm:text-4xl">
+                I create modern web apps that are clean, responsive, and easy to use.
+              </h3>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--muted)]">
+                I am a MERN Stack Developer with 1.5+ years of experience building scalable web applications. My work combines React.js, Node.js, Express, MongoDB, and practical UI thinking to deliver dashboards, CRM tools, e-commerce systems, and interactive web platforms.
+              </p>
             </div>
 
-            <div className="flex flex-wrap gap-6">
-              <a
-                href="#contact"
-                className="px-6 flex justify-center items-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
-              >
-                Contact Me
-              </a>
-              <a href="/MuhammadOwais1.pdf"
-                download onClick={() => setIsOpen(false)} className={`block px-4 py-3  rounded-md text-gray-400 border text-center hover:bg-gray-800 hover:text-gray-100  font-medium transition-colors scale-3d`}> Download CV </a>
+            <div className="relative mb-10 border-l border-[var(--border)] pl-6">
+              {journey.map((item) => (
+                <div key={item.title} className="relative pb-8 last:pb-0">
+                  <span className="absolute -left-[31px] top-1 grid h-4 w-4 place-items-center rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] shadow-[0_0_20px_var(--accent-shadow)]" />
+                  <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_16px_50px_var(--shadow)] transition-colors hover:border-[var(--accent)]">
+                    <h4 className="text-lg font-bold text-[var(--text)]">{item.title}</h4>
+                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
+            <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_20px_70px_var(--shadow)]">
+              <h4 className="mb-5 text-xl font-bold text-[var(--text)]">Technologies I Use</h4>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {skills.map((skill) => (
+                  <div
+                    key={skill.label}
+                    className="rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]"
+                  >
+                    <div className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent-text)]">
+                      {skill.icon}
+                    </div>
+                    <p className="text-sm font-bold text-[var(--text-soft)]">{skill.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

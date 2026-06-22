@@ -1,98 +1,130 @@
-
-import React from 'react';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowRight } from 'react-icons/fi';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
+import { SiNextdotjs, SiReact } from "react-icons/si";
 
 export default function Home() {
+  const socialLinks = [
+    { icon: <FiGithub size={21} />, url: "https://github.com/Jam-Awais-Ishaq", label: "GitHub" },
+    {
+      icon: <FiLinkedin size={21} />,
+      url: "https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <FiTwitter size={21} />,
+      url: "https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09",
+      label: "Twitter",
+    },
+    { icon: <FiMail size={21} />, url: "mailto:muhammadowaisishaqofficials@gmail.com", label: "Email" },
+  ];
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-600 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        {/* Left Column - Text Content */}
-        <div className="space-y-3 box-border md:space-y-4 text-center lg:text-left relative z-10">
-          <div className="inline-block px-3 py-1 mt-7 rounded-full bg-blue-100 dark:bg-gray-700 mb-4">
-            <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Welcome to my portfolio</span>
+    <section
+      id="home"
+      className="relative isolate min-h-screen overflow-hidden bg-[var(--page-bg)] px-4 pb-14 pt-28 text-[var(--text)] sm:px-6 lg:px-8 lg:pb-10 lg:pt-32"
+    >
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_20%,var(--glow-a),transparent_28%),radial-gradient(circle_at_82%_32%,var(--glow-b),transparent_26%),linear-gradient(135deg,var(--hero-start)_0%,var(--hero-mid)_52%,var(--hero-end)_100%)]" />
+      <div className="hero-dot-grid absolute right-[4.5%] top-[21.5%] z-0 h-24 w-24 opacity-70" />
+      <div className="hero-dot-wave absolute inset-x-0 bottom-0 -z-10 h-40 opacity-70" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1fr_0.9fr]">
+        <div className="relative z-10 text-center lg:text-left">
+          <div className=" inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur">
+            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-sm font-bold text-transparent sm:text-base">
+              Welcome to my portfolio
+            </span>
+            <span className="ml-2 text-base" aria-hidden="true">
+              👋
+            </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight">
-            Hi, I&apos;m <span className="text-blue-600 font-extrabold dark:text-blue-400 bg-clip-text">Muhammad Owais Ishaq</span>
+          <h1 className="text-2xl flex items-center  font-black leading-tight tracking-normal text-[var(--text)] sm:text-5xl lg:text-lg">
+            <span className="block mt-2.5">Hi, I&apos;m</span>
+            <span className="mt-1 ml-5 block bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-[20px] font-black leading-tight text-transparent sm:text-[25px] lg:text-[30px]">
+              Muhammad Owais Ishaq
+            </span>
           </h1>
 
-
-          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300">
-            <span className="inline-block">
-              Frontend Developer (MERN)
-              <span className="inline-block w-2 h-2 ml-2 bg-blue-500 rounded-full animate-pulse"></span>
+          <h2 className="mt-2 text-2xl font-extrabold text-[var(--text-soft)] sm:text-3xl lg:text-2xl">
+            MERN stack Developer{" "}
+            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">
+              (PERN)
             </span>
+            <span className="ml-3 inline-block h-3 w-3 rounded-full bg-[var(--accent)] shadow-[0_0_24px_var(--accent-shadow)]" />
           </h2>
 
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            I specialize in crafting <span className="font-medium text-blue-600 dark:text-blue-400">high-performance</span> web applications with React, Next.js, and modern web technologies. Passionate about creating intuitive, accessible, and visually stunning user experiences.
+          <p className="mx-auto mt-1 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg lg:mx-0">
+            I specialize in crafting{" "}
+            <span className="font-semibold text-[var(--accent-text)]">high-performance</span> web applications
+            with React, Next.js, and modern web technologies. Passionate about creating intuitive,
+            accessible, and visually stunning user experiences.
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+          <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
             <a
-              href="#projects"
-              className="group px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+              href="/projects"
+              className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] px-7 py-4 text-base font-bold text-white shadow-[0_16px_36px_var(--accent-shadow)] transition-transform duration-300 hover:-translate-y-1"
             >
               View My Work
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
-              href="#contact"
-              className="group px-6 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-700/50 dark:border-blue-400 font-medium rounded-lg transition-all flex items-center gap-2"
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-xl border border-[var(--accent)] px-7 py-4 text-base font-bold text-[var(--accent-text)] transition-colors duration-300 hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
             >
               Contact Me
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center lg:justify-start space-x-5 pt-6">
-            {[
-              { icon: <FiGithub size={24} />, url: "https://github.com/Jam-Awais-Ishaq" },
-              { icon: <FiLinkedin size={24} />, url: "https://www.linkedin.com/in/muhammad-owais-ishaq-054102374/" },
-              { icon: <FiTwitter size={24} />, url: "https://x.com/Awaisishaq12345?t=x9u8h7cJWm5C_yUDgXShKg&s=09" },
-              { icon: <FiMail size={24} />, url: "mailto:muhammadowaisishaqofficials@gmail.com" }
-            ].map((item, index) => (
+          <div className="mt-6 flex justify-center gap-5 lg:justify-start">
+            {socialLinks.map((item) => (
               <a
-                key={index}
+                key={item.label}
                 href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400  hover:-translate-y-1 transform transition-all duration-300" aria-label={`Social link ${index}`}>
+                target={item.url.startsWith("mailto:") ? undefined : "_blank"}
+                rel={item.url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                aria-label={item.label}
+                className="grid h-12 w-12 place-items-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:text-[var(--text)] hover:shadow-[0_10px_28px_var(--accent-shadow)]"
+              >
                 {item.icon}
               </a>
             ))}
           </div>
         </div>
 
-        {/* Right Column - Image */}
-        <div className="relative flex justify-center mt-10 lg:mt-0">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-gray-800 group">
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent z-10"></div>
-            <div className="absolute inset-0 bg-blue-600/10 dark:bg-blue-400/10 group-hover:opacity-0 transition-opacity duration-500 z-0"></div>    
-
-            {/* Using Next.js Image component for optimized loading */}
-            <Image src="/awais.png" alt="Muhammad Awais" width={500} height={500} className="w-full h-full object-cover border-0 transform group-hover:scale-105 transition-transform duration-500" priority />
-          </div>   
-
-          {/* Decorative elements */}
-          <div className="absolute -bottom-6 -right-6 bg-blue-600 dark:bg-blue-500 w-32 h-32 rounded-2xl -z-10 animate-float"></div>
-          <div className="absolute -top-6 -left-6 bg-indigo-500 dark:bg-indigo-600 w-24 h-24 rounded-2xl -z-10 animate-float-delay"></div>
-
-          {/* Tech stack floating badges */}
-          <div className="absolute -left-0 top-1/4 bg-white dark:bg-gray-800 shadow-md px-3 py-2 rounded-lg flex items-center gap-2 -rotate-12">
-            <span className="text-xs font-bold text-blue-600 dark:text-blue-400">React.js</span>    
+        <div className="relative mx-auto w-full max-w-[410px]">
+          <div className="absolute -right-8 top-1 hidden w-32 rounded-full border border-[var(--accent)] opacity-20 lg:block" />
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--accent)] bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] p-px shadow-[0_28px_90px_var(--accent-shadow)]">
+            <div className="relative isolate flex aspect-[0.88] items-start justify-center overflow-hidden rounded-[1.42rem] bg-[radial-gradient(circle_at_25%_10%,var(--glow-a),transparent_40%),linear-gradient(135deg,var(--page-bg)_0%,var(--page-bg-2)_45%,var(--hero-end)_100%)]">
+              <div className="absolute left-1/2 top-[54%] -z-10 aspect-square w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-soft)] shadow-[inset_0_0_80px_var(--glow-a),0_0_90px_var(--glow-b)]" />
+              <div className="absolute left-1/2 top-[54%] -z-10 aspect-square w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--glow-a)_0%,var(--glow-b)_48%,transparent_70%)]" />
+              <Image
+                src="/awaisRemovedBG.png"
+                alt="Muhammad Owais Ishaq"
+                width={720}
+                height={800}
+                priority
+                className="relative z-10 h-full w-full object-cover object-top"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[var(--page-bg)] to-transparent" />
+            </div>
           </div>
-          <div className="absolute -right-1 bottom-1/4 bg-white dark:bg-gray-800 shadow-md px-3 py-2 rounded-lg flex items-center gap-2 rotate-12">
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">Next.js</span>
+
+          <div className="hero-float absolute -left-3 top-[22%] hidden rotate-6 items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 shadow-2xl backdrop-blur-md sm:flex lg:-left-12">
+            <SiReact className="text-[#00d4ff]" size={28} />
+            <span className="font-bold text-[var(--text)]">React.js</span>
+          </div>
+
+          <div className="hero-float-delay absolute -right-2 bottom-[22%] hidden -rotate-6 items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 shadow-2xl backdrop-blur-md sm:flex lg:-right-12">
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-black text-lg font-black text-white">
+              <SiNextdotjs size={22} />
+            </span>
+            <span className="font-bold text-[var(--text)]">Next.js</span>
           </div>
         </div>
       </div>
-
-      {/* Background elements */}
-      <div className="absolute top-20 left-20 w-40 h-40 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-indigo-200 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-20 animate-blob-delay"></div>
     </section>
   );
 }
